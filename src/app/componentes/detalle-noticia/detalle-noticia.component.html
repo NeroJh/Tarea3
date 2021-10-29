@@ -1,0 +1,11 @@
+<h2>{{noticia.titulo}} |  
+    <span [ngClass]="{verde: categoria.color=='green', 
+    azul: categoria.color=='blue',
+     rojoOscuro: categoria.color=='darkRed', 
+     violeta: categoria.color=='violet', 
+     azulOscuro: categoria.color=='darkBlue', 
+     rojo: categoria.color=='red'}"> 
+     {{categoria.titulo}} </span> </h2>
+    Autor: {{noticia.autor}} || Fecha: {{noticia.fecha}}
+    <div class="text-center"><img src="{{noticia.imagen}}" class="img-fluid" alt="{{noticia.imagen}}"></div>
+<p>{{noticia.texto}}</p>
