@@ -11,14 +11,14 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 export class InicioComponent implements OnInit {
 
 ListaNoticias=ListaNoticias;
-
-@Input() noticia:any;
+noticia:any;
 //categorias:Categorias[]=ListaCategorias;
 //categoria:any;
 
   constructor() {}
 
   ngOnInit(): void {
+    //this.noticia=ListaNoticias.find(objeto=>objeto.id==id);
     //this.categoria=this.categorias.find(cate => this.noticia.idCategoria == cate.id)
   }
 

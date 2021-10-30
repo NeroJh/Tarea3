@@ -10,10 +10,10 @@
     </section>
 </ul>-->
 
-<div class="containerDestacado">
+<div class="container mx-auto text-center">
     <label *ngFor="let noticia of ListaNoticias">
         <div class="card" *ngIf="noticia.destacado == true" style="width: 18rem;">
-            <img src="{{noticia.imagen}}" class="card-img-top" alt="{{noticia.imagen}}">
+            <label class="text-center"><img src="{{noticia.imagen}}" class="card-img-top" alt="{{noticia.imagen}}"></label>
             <div class="card-body">
                     
                 <h5 class="card-title">

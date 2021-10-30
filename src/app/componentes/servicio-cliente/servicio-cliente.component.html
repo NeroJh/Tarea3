@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="container" *ngIf="formulario==true">
+
+        <h2>Servicio al Cliente</h2>
+
+        <form class="formulario" [formGroup]="form" method="post" action="#"> 
+
+            <div class="secciones">
+                <label for="nombre" class="form-label"> Nombre Completo </label>
+                <input type="text"  id="nombre" class="form-control" formControlName="nombre" placeholder="Nombre completo"
+                    [ngClass]="{ 'is-invalid': form.controls['nombre'].invalid && (form.controls['nombre'].dirty || form.controls['nombre'].touched),
+                    'is-valid': form.controls['nombre'].valid && (form.controls['nombre'].dirty || form.controls['nombre'].touched)}">
+
+                <div *ngIf="form.controls['nombre'].invalid && (form.controls['nombre'].dirty || form.controls['nombre'].touched)" class="invalid-feedback">
+                    <div *ngIf="form.controls['nombre'].hasError('required')"> El nombre no acepta esos caracteres </div> 
+                </div>    
+            </div>
+
+            <div class="secciones">
+                <label for="telefono" class="form-label">Télefono</label>
+                <input type="text" id="telefono" formControlName="telefono" class="form-control" placeholder="Telefono"
+          [ngClass]="{'is-invalid': form.controls['telefono'].invalid && (form.controls['telefono'].dirty || form.controls['telefono'].touched), 
+          'is-valid': form.controls['telefono'].valid && (form.controls['telefono'].dirty || form.controls['telefono'].touched)}">
+
+                    <div *ngIf="form.controls['telefono'].invalid && (form.controls['telefono'].dirty || form.controls['telefono'].touched)" class="invalid-feedback">
+
+                        <div *ngIf="form.controls['telefono'].hasError('required')">
+                        El número de telefono es obligatorio
+                      </div>
+                      <div *ngIf="form.controls['telefono'].hasError('pattern')">
+                        El numero de telefono solo puede contener numeros
+                      </div> 
+                      <div *ngIf="form.controls['telefono'].hasError('maxlength')">
+                        El numero de telefono ingresado no es valido, tiene que contener 9 digitos
+                      </div>
+                      <div *ngIf="form.controls['telefono'].hasError('minlength')">
+                        El numero de telefono ingresado no es valido, tiene que contener 9 digitos
+                      </div>
+                    </div>
+            </div>
+
+            <div class="secciones">
+                <label for="e-mail" class="form-label">Correo Electronico</label>
+                <input type="text"  id="email" formControlName="email" class="form-control" placeholder="Correo electronico"
+                    [ngClass]="{ 'is-invalid': form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched),'is-valid': form.controls['email'].valid && (form.controls['email'].dirty || form.controls['email'].touched)}">
+
+                <div *ngIf="form.controls['email'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)" class="invalid-feedback">
+                    
+                    <div *ngIf="form.controls['email'].hasError('required')">
+                        El correo es obligatorio
+                    </div>
+
+                    <div *ngIf="form.controls['email'].hasError('email')">
+                        El correo ingresado no es valido
+                    </div>
+                
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
